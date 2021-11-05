@@ -371,7 +371,8 @@ AutoPlay.buyUpgrade = function(upgrade, bypass=true) {
 //======================= CM Strategy ============================
 AutoPlay.bestBuy = function() {
   // if cookie monster isn't installed
-  if (typeof CookieMonsterData == 'undefined') {
+  CM = CookieMonsterData
+  if (typeof CM == 'undefined') {
     AutoPlay.handleBuildings();
     AutoPlay.handleUpgrades();
     return;
