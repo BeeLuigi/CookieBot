@@ -469,8 +469,9 @@ AutoPlay.bestBuy = function() {
   if (Game.Achievements["Hardcore"].won || Game.UpgradesOwned!=0) {
     for (var u of Game.UpgradesInStore) {
       if (!AutoPlay.avoidbuy(u) && !u.bought) {
-        if (CookieMonsterData.Upgrades[u.name].pp < 1)
+        if (CookieMonsterData.Upgrades[u.name].pp < 1) {
           if (AutoPlay.buyUpgrade(u)) haveBought=true;
+        }
         else if (CookieMonsterData.Upgrades[u.name].pp < minpp) {
           minpp = CookieMonsterData.Upgrades[u.name].pp;
           best = u.name;
@@ -480,8 +481,9 @@ AutoPlay.bestBuy = function() {
     }
   }
 
-  if (type == 'building')
+  if (type == 'building') {
     if (AutoPlay.buyBuilding(Game.Objects[best], buy_amt, buy_amt)) haveBought=true;
+  }
   else if (type == 'upgrade')
     if (AutoPlay.buyUpgrade(Game.Upgrades[best], true)) haveBought=true;
 
