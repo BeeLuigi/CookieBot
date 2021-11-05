@@ -424,6 +424,13 @@ AutoPlay.bestBuy = function() {
   for (var u in CookieMonsterData.Upgrades) {
     if (u in overrides){
       CookieMonsterData.Upgrades[u].bonus = overrides[u]* Game.cookiesPs;
+      var GetWrinkConfigBank = 0
+      if (Game.mods.cookieMonsterFramework.saveData.cookieMonsterMod.settings.CalcWrink === 1) {
+         GetWrinkConfigBank = CookieMonsterData.Cache.WrinklersTotal;
+      }
+       if (Game.mods.cookieMonsterFramework.saveData.cookieMonsterMod.settings.CalcWrink === 2) {
+         GetWrinkConfigBank = CookieMonsterData.Cache.WrinklersFattest[0];
+       }
       CookieMonsterData.Upgrades[u].pp = (Math.max(Game.Upgrades[u].getPrice() - (Game.cookies + CookieMonsterData.Disp.GetWrinkConfigBank()), 0) / Game.cookiesPs) + (Game.Upgrades[u].getPrice() / CookieMonsterData.Upgrades[u].bonus);
     }
   }
