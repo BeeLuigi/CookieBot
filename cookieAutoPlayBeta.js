@@ -402,7 +402,7 @@ AutoPlay.bestBuy = function() {
     'Plasmarble mouse': CookieMonsterData.Cache.AverageClicks * 0.01,
     'Lucky day': 0.5,
     'Serendipity': 0.5,
-    'Get lucky': 0.5,Ca
+    'Get lucky': 0.5,
     'A crumbly egg': 0.5,
     'A festive hat': 0.1,
     'Reindeer baking grounds': 0.1,
