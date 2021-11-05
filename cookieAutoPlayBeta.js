@@ -88,7 +88,7 @@ AutoPlay.run = function() {
   AutoPlay.status(false);
   if (AutoPlay.plantPending)
     AutoPlay.addActivity("Make sure to harvest the new plant before ascend!");
-  AutoPlay.deadline=AutoPlay.now+60000; // wait one minute before next step
+  AutoPlay.deadline=AutoPlay.now+5000; // wait one minute before next step
   AutoPlay.setDeadline(AutoPlay.now+(AutoPlay.now-Game.startDate)/10); // quick start
 
   // run only once a minute
